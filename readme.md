@@ -1,0 +1,1 @@
+# My Chrome extension template for new projects, that uses the Plasmo framework.
