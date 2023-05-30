@@ -48,7 +48,8 @@
       "storage"
     ],
     "icons": {
-      "64": "/assets/icon.png"
+      "64": "/assets/icon64.png",
+      "512": "/assets/icon512.png"
     },
     "externally_connectable": {
       "matches": [
