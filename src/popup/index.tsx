@@ -6,9 +6,6 @@ import { AnalyticsEvent } from '@/misc/GA';
 
 const IndexPopup = () => {
   useEffect(() => {
-    window.gtag('config', process.env.PLASMO_PUBLIC_GTAG_ID, {
-      page_path: '/popup',
-    });
     AnalyticsEvent([
       {
         name: 'pageview',
