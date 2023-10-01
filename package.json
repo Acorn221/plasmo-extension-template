@@ -14,10 +14,12 @@
     "@plasmohq/messaging": "^0.1.8",
     "@plasmohq/storage": "^1.6.0",
     "@types/webextension-polyfill": "^0.10.0",
+    "daisyui": "^3.8.2",
     "plasmo": "0.67.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.2.4",
+    "uuidv4": "^6.2.13",
     "webextension-polyfill": "^0.10.0"
   },
   "devDependencies": {
@@ -125,7 +127,8 @@
       "no-alert": 0,
       "import/prefer-default-export": 0,
       "no-shadow": "off",
-      "@typescript-eslint/no-shadow": "error"
+      "@typescript-eslint/no-shadow": "error",
+      "no-undef": 0
     }
   }
 }
