@@ -1,6 +1,5 @@
-import type { PlasmoCSConfig, PlasmoGetStyle } from 'plasmo';
+import type { PlasmoCSConfig } from 'plasmo';
 import { sendToBackground } from '@plasmohq/messaging';
-// import styleText from 'data-text:~src/contents/style.css';
 
 /**
  * Execute the script on the tinder website,
@@ -9,18 +8,7 @@ import { sendToBackground } from '@plasmohq/messaging';
 export const config: PlasmoCSConfig = {
   matches: ['*://j4a.uk/*'],
   run_at: 'document_start',
-  css: ['./style.css'],
 };
-
-/**
- * Executing styling on the site, letting me use tailwind
-
-export const getStyle: PlasmoGetStyle = () => {
-  const style = document.createElement('style');
-  style.textContent = styleText;
-  return style;
-};
-*/
 
 try {
   console.log('Hello from contentscript.ts');
