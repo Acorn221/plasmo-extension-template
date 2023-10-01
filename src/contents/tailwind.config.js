@@ -2,9 +2,6 @@
 module.exports = {
   mode: 'jit',
   darkMode: 'class',
-  content: ['./contents/**/*.tsx', './components/**/*.tsx'],
+  content: ['./src/contents/**/*.tsx', './src/components/**/*.tsx'],
   plugins: [require('daisyui')],
-  compilerOptions: {
-    baseUrl: 'src/',
-  },
 };

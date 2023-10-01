@@ -2,7 +2,7 @@
 module.exports = {
   mode: 'jit',
   darkMode: 'class',
-  content: ['./popup/**/*.tsx', './components/**/*.tsx'],
+  content: ['./src/popup/**/*.tsx', './src/components/**/*.tsx'],
   plugins: [require('daisyui')],
   compilerOptions: {
     baseUrl: 'src/',
