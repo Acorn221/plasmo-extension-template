@@ -1,29 +1,22 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import React, { useState, useEffect } from 'react';
-import ukraineFlag from 'svg-country-flags/svg/ua.svg';
-import '@/popup/style.css';
-import { useStorage } from '@plasmohq/storage/hook';
-import logo from '~assets/LighterFuel512.png';
-import { openTab } from '@/misc/utils';
-import 'https://www.googletagmanager.com/gtag/js?id=$PLASMO_PUBLIC_GTAG_ID';
+import React, { useEffect } from 'react';
+import './style.css';
 
-enum menuOptions {
-  settings,
-  info,
-}
+import { AnalyticsEvent } from '@/misc/GA';
 
 const IndexPopup = () => {
-  const [data, setData] = useState('');
-  const [menuTab, setMenuTab] = useState<menuOptions>(menuOptions.settings);
-
   useEffect(() => {
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function gtag() {
-      window.dataLayer.push(arguments) // eslint-disable-line
-    };
     window.gtag('config', process.env.PLASMO_PUBLIC_GTAG_ID, {
       page_path: '/popup',
     });
+    AnalyticsEvent([
+      {
+        name: 'pageview',
+        params: {
+          path: '/popup',
+        },
+      },
+    ]);
   }, []);
 
   return (
