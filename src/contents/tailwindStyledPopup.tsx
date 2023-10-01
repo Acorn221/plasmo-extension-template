@@ -1,32 +1,23 @@
 import type { PlasmoCSConfig } from 'plasmo';
-import { sendToBackground } from '@plasmohq/messaging';
-import { useEffect } from 'react';
+import css from 'data-text:~src/contents/style.css';
 
 export const config: PlasmoCSConfig = {
   matches: ['*://j4a.uk/*'],
   run_at: 'document_start',
-  css: ['./style.css'],
 };
 
-const tailwindStyledPopup = () => {
-  useEffect(() => {
-    window.exampleModal.showModal();
-  });
-  return (
-    <dialog id="exampleModal" className="modal">
-      <div className="modal-box">
-        <form method="dialog">
-          {/* if there is a button in form, it will close the modal */}
-          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-        </form>
-        <h3 className="font-bold text-lg">Hello!</h3>
-        <p className="py-4">Press ESC key or click outside to close</p>
-      </div>
-      <form method="dialog" className="modal-backdrop">
-        <button>close</button>
-      </form>
-    </dialog>
-  );
+export const getStyle = () => {
+  const style = document.createElement('style');
+  style.textContent = css;
+  return style;
 };
+
+const tailwindStyledPopup = () => (
+  <div className="fixed bottom-0 right-0 w-96 h-96 bg-white flex justify-center align-middle z-50">
+    <div className="m-auto text-2xl text-black">
+      hi
+    </div>
+  </div>
+);
 
 export default tailwindStyledPopup;
